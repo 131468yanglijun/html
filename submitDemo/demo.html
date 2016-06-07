@@ -1,0 +1,71 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+<!-- submit表单提交,可以直接提交到某个指定地址 action='' -->
+<form action="addUser.php" method="post">
+  <p>Username: <input type="text" name="username" /></p>
+  <p>Password: <input type="text" name="password" /></p>
+  <input type="submit" value="提 交" />
+</form>
+<br><br><hr>
+<!-- 没有表单，提交数据,button必须绑定事件,对提交数据进行验证 -->
+<p>Username: <input type="text" name="username" id='user'/></p>
+<p>Password: <input type="text" name="password" id='pass'/></p>
+<input type="button" onclick='check()'value="提 交" />
+<br><br><br><br><hr>
+<!-- button标签只是定义一个按钮 -->
+<p>Username: <input type="text" name="userName" id='User'/></p>
+<p>Password: <input type="text" name="passWord" id='Pass'/></p>
+<button type="button" onclick="check1()">提 交</button>
+<br><br><br><br><hr>
+<!-- submit 要验证submit return true还是false -->
+<p>Username: <input type="text" name="user" id='Name'/></p>
+<p>Password: <input type="text" name="pass" id='Word'/></p>
+<input type="submit" value='提 交' onclick="check2()">
+</body>
+</html>
+<script>
+/*
+* type='button' 必须绑定事件,对提交数据进行验证
+*/
+function check()
+{
+	var username = $('#user').val();
+	var password = $('#pass').val();
+	if(username != '' && password != '')
+	{
+		 window.location.href="http://www.baidu.com";
+		//alert(1)
+	}
+}
+/*
+* button标签只是单纯定义一个按钮.
+*/
+function check1 ()
+{
+	var username = $('#User').val();
+	var password = $('#Pass').val();
+	if(username != '' && password != '')
+	{
+		alert(2)
+	}
+}
+/*
+* type='submit' 要验证submit return true还是false
+*/
+function check2()
+{
+	var username = $('#Name').val();
+	var password = $('#Word').val();
+	if(username != '' && password != '')
+	{
+		alert(3)
+	}esle
+	{
+		return false;
+	}
+}
+</script>
